@@ -1,0 +1,22 @@
+import { syncUser } from "@/lib/actions/users";
+import { useUser } from "@clerk/nextjs";
+import React, { useEffect } from "react";
+
+const UserSync = () => {
+  const { isSignedIn, isLoaded } = useUser();
+
+  useEffect(() => {
+    const handleUserSync = async () => {
+      if (isLoaded && isSignedIn) {
+        try {
+          await syncUser();
+        } catch (error) {
+          console.log("failed to sync user ", error);
+        }
+      }
+    };
+    handleUserSync();
+  }, [isLoaded, isSignedIn]);
+};
+
+export default UserSync;
