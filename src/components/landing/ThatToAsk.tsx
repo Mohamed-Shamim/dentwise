@@ -1,7 +1,7 @@
 import { MessageCircleIcon, MessageSquareIcon } from "lucide-react";
 import Image from "next/image";
 
-function WhatToAsk() {
+function ThatToAsk() {
   return (
     <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/20">
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -151,4 +151,4 @@ function WhatToAsk() {
     </section>
   );
 }
-export default WhatToAsk;
+export default ThatToAsk;
